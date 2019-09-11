@@ -3,7 +3,7 @@ package com.codingwithmitch.mviexample.util
 /**
  * Used as a wrapper for data that is exposed via a LiveData that represents an event.
  */
-open class Event<out T>(private val content: T) {
+class Event<T>(private val content: T) {
 
     var hasBeenHandled = false
         private set // Allow external read but not write
@@ -26,7 +26,7 @@ open class Event<out T>(private val content: T) {
     fun peekContent(): T = content
 
     override fun toString(): String {
-        return "Event(\ncontent=$content,\n hasBeenHandled=$hasBeenHandled)"
+        return "Event(content=$content,hasBeenHandled=$hasBeenHandled)"
     }
 
     companion object{
